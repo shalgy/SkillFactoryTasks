@@ -36,11 +36,110 @@ namespace SF_Module7tasks
     class Human : Creature { }
 
     class HomoSapiens : Human { }
+    class Helper 
+    {
+        public static void Swap(ref int num1, ref int num2)
+        {
+            int value;
+            value = num1;
+            num1 = num2;
+            num2 = value;
+        }
+    }
 
+    static class StringExtensions
+    {
+        public static char GetLastChar(this string source)
+        {
+            return source[source.Length - 1];
+        }
+    }
+
+    static class IntExtensions
+    {
+        public static int GetNegative(this int source)
+        {
+            return source < 0 ? source : source * -1;
+        }
+        public static int GetPositive(this int source)
+        {
+            return source > 0 ? source : source * -1;
+        }
+        //public static int GetNegative(this int source)
+        //{
+        //    return source > 0 ? - source : source;
+        //}
+        //public static int GetPositive(this int source)
+        //{
+        //    return source < 0 ? - source : source;
+        //}
+    }
     class Program
     {
+        public static void Swap<T>(ref T x, ref T y)
+        {
+            T t = x;
+            x = y;
+            y = t;
+        }
+
         static void Main(string[] args)
         {
+            Obj obj = new Obj();
+            obj.Display<int>(345);
+
+            int num1 = 4;
+            int num2 = 10;
+            Swap<int>(ref num1, ref num2);
+
+            Console.WriteLine("{0} {1}", num1, num2);
+
+            Console.ReadKey();
+            //bool exit = false;
+            //do
+            //{
+            //    Console.WriteLine("Введите целочисленное значение и нажмите Ввод, для выхода из программы наберите exit и нажмите Ввод");
+            //    var result = Console.ReadLine();
+            //    if (result != "exit")
+            //    {
+            //        if (int.TryParse(result, out int intnum))
+            //        {
+            //            Console.WriteLine("Результат конвертирования в отрицательное значение: {0}", intnum.GetNegative());
+            //            Console.WriteLine("Результат конвертирования в положительное значение: {0}", intnum.GetPositive());
+            //        }
+            //    }
+            //    else { exit = true; }
+            //} while (exit == false);
+
+            //int num1 = 7;
+            //int num2 = -13;
+            //int num3 = 0;
+
+            //Console.WriteLine(num1.GetNegative()); //-7
+            //Console.WriteLine(num1.GetPositive()); //7
+            //Console.WriteLine(num2.GetNegative()); //-13
+            //Console.WriteLine(num2.GetPositive()); //13
+            //Console.WriteLine(num3.GetNegative()); //0
+            //Console.WriteLine(num3.GetPositive()); //0
+
+            //int num1 = 3;
+            //int num2 = 58;
+
+            //Helper.Swap(ref num1, ref num2);
+
+            //Console.WriteLine(num1); //58
+            //Console.WriteLine(num2); //3
+
+            //NeoCar car = new NeoCar();
+            //Console.WriteLine(NeoCar.MinPrice);
+            //Console.WriteLine(NeoCar.MaxPrice);
+
+            //string str = "Hello";
+            //Console.WriteLine(str.GetLastChar());
+
+            //Console.WriteLine("Строка".GetLastChar());
+            //Console.ReadKey();
+
             //HomoSapiens hs = new HomoSapiens();
             //Human human = hs;
             //Creature creature = (Creature)human;
@@ -85,8 +184,9 @@ namespace SF_Module7tasks
 
             //Book book = collection[1];
             //Console.WriteLine("Название книги: {0}\nАвтор книги: {1}", book.Name, book.Author);
-            int[] arr = new int[10] { 15, 4, 6, -7, 9, 88, 41, 17, 254, -65};
-            IndexingClass IC = new IndexingClass() { int[] = arr };
+            //int[] arr = new int[10] { 15, 4, 6, -7, 9, 88, 41, 17, 254, -65};
+            //IndexingClass IC = new IndexingClass() { int[] = arr };
+
         }
     }
     

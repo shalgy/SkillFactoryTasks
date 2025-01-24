@@ -9,6 +9,12 @@ namespace SF_Module7tasks
 {
     public class Obj
     {
+        public static int MaxValue;
+        public static string Parent;
+        public static int DaysInWeek;
+        
+        public string Name;
+        public string Description;
         public int Value;
         //private string name;
         //private string owner;
@@ -23,6 +29,12 @@ namespace SF_Module7tasks
         //    this.count = count;
         //}
 
+        static Obj()
+        {
+            MaxValue = 2000;
+            Parent = "System.Object";
+            DaysInWeek = 7;
+        }
         public static Obj operator +(Obj obj, int value)
         {
             return new Obj
@@ -50,6 +62,10 @@ namespace SF_Module7tasks
             {
                 Value = a.Value - b.Value
             };
+        }
+        public void Display<T>(T param)
+        {
+            Console.WriteLine(param.ToString());
         }
     }
     
