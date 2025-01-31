@@ -88,6 +88,10 @@ namespace SF_Module7tasks
             Obj obj = new Obj();
             obj.Display<int>(345);
 
+            Order<HomeDelivery> order1; // Все работает
+            Order<int> order2;		// Ошибка при компиляции
+
+            
             int num1 = 4;
             int num2 = 10;
             Swap<int>(ref num1, ref num2);

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFModule6ClassLibrary", "SF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF_Module7tasks", "SF_Module7tasks\SF_Module7tasks.csproj", "{898A82AC-DCEC-42D5-88D7-78BDF8C6814E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFModule67OOPitog", "SFModule67OOPitog\SFModule67OOPitog.csproj", "{89C834CF-1DA2-4536-822B-8E555A007B98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{898A82AC-DCEC-42D5-88D7-78BDF8C6814E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{898A82AC-DCEC-42D5-88D7-78BDF8C6814E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{898A82AC-DCEC-42D5-88D7-78BDF8C6814E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89C834CF-1DA2-4536-822B-8E555A007B98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89C834CF-1DA2-4536-822B-8E555A007B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89C834CF-1DA2-4536-822B-8E555A007B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89C834CF-1DA2-4536-822B-8E555A007B98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
