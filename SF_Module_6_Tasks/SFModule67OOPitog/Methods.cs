@@ -13,7 +13,7 @@ namespace SFModule67OOPitog
             if (method) { Console.WriteLine(text); }
             else { Console.Write(text); }
         }
-
+        
         internal static string TextQuestion(string msgtext)
         //метод запрашивает у пользователя строчные данные, вызывает методы проверки и возвращает корректное значение
         {

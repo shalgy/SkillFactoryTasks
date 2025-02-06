@@ -25,9 +25,10 @@ namespace SFModule67OOPitog
         private protected string? lastName = personParam.LastName;
         private protected bool isEmployee = personParam.IsEmployee;
         private protected PersonTypes personType = personParam.PersonType;
+        public virtual double Balance { get; set; }
         public virtual void ShowInfo()
         {
-            WriteInColor((isEmployee ? "Сотрудник " : string.Empty) + personType + ": " + lastName + " " + firstName, true, 3);
+            WriteInColor((isEmployee ? "Сотрудник " : string.Empty) + personType + ": " + lastName + " " + firstName, true, 11);
         }
         public virtual double Discount() {  return 0.0; }
         public bool IsEmployee
@@ -47,12 +48,14 @@ namespace SFModule67OOPitog
     {
         private int age = age;
         private string homeAdress = homeAdress;
+        private double balance = 25000.0;
+        public override double Balance { get { return balance; }  set { balance = value; } }   
 
         public override void ShowInfo()
         {
-            WriteInColor((isEmployee ? "Сотрудник " : string.Empty) + personType + ": " + lastName + " " + firstName + ", возраст: " + age, true, 3);
-            WriteInColor("Ваша скидка: " + string.Format("{0} %", Discount() * 100), true, 3);
-            WriteInColor("Домашний адрес: " + homeAdress, true, 3);
+            WriteInColor((isEmployee ? "Сотрудник " : string.Empty) + personType + ": " + lastName + " " + firstName + ", возраст: " + age, true, 11);
+            WriteInColor("Ваш баланс = " + string.Format("{0:0.00}", balance) + "р., Ваша скидка: " + string.Format("{0} %", Discount() * 100), true, 10);
+            WriteInColor("Домашний адрес: " + homeAdress, true, 11);
         }
         public override double Discount() 
         {
@@ -66,14 +69,20 @@ namespace SFModule67OOPitog
             }
             return discount;
         }
-       
+        public override int GetHashCode()
+        {
+            return 44444444;
+        }
+
     }
     internal class OrgEmloyee(PersonParams personParam) : Person(personParam)
     {
+        private double balance = 15000.0;
+        public override double Balance { get { return balance; } set { balance = value; } }
         public override void ShowInfo()
         {
-            WriteInColor((isEmployee ? "Сотрудник " + Shop.ShopName : string.Empty) + " (" + personType + "): " + lastName + " " + firstName, true, 3);
-            WriteInColor("Ваша скидка: " + string.Format("{0} %", Discount() * 100), true, 10);
+            WriteInColor((isEmployee ? "Сотрудник " + Shop.ShopName : string.Empty) + " (" + personType + "): " + lastName + " " + firstName, true, 11);
+            WriteInColor("Ваш баланс = " + string.Format("{0:0.00}", balance) + "р., Ваша скидка: " + string.Format("{0} %", Discount() * 100), true, 10);
         }
         public override double Discount()
         {
@@ -82,6 +91,10 @@ namespace SFModule67OOPitog
             else if (personType == PersonTypes.Продавец) { discount = 0.1; }
             return discount;
 
+        }
+        public override int GetHashCode()
+        {
+            return 55555555;
         }
 
     }
