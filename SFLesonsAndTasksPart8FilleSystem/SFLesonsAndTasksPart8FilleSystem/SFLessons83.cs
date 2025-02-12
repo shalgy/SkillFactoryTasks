@@ -57,6 +57,7 @@ namespace SFLesonsAndTasksPart8FilleSystem
                     Console.WriteLine("Что-то не понятно, заданого файла: \" {0} \" - не существует", filePath);
                 }
             }
+            //Метод возвращает путь к файлу из которого вызван метод
             private static string GetThisFilePath([CallerFilePath] string? path = null)
             {
                 return path;
@@ -161,7 +162,38 @@ namespace SFLesonsAndTasksPart8FilleSystem
                     Console.WriteLine("Что-то не понятно, заданого файла: \" {0} \" - не существует", filePath);
                 }
             }
-            
+
+
+            //_____________________________________________________________________________________________________________________________________
+            //Задание 8.3.2
+            //Сделайте так, чтобы ваша программа из задания 8.3.1 при каждом запуске добавляла в свой исходный код комментарий о времени последнего запуска.
+            public static void SelfCodeLaastRunTimeWriter2()
+            {
+                
+                var fileInfo = new FileInfo(GetThisFilePath());
+
+                using (StreamWriter sw = fileInfo.AppendText())
+                {
+                    sw.WriteLine($"// Время запуска: {DateTime.Now}");
+                }
+
+                using (StreamReader sr = fileInfo.OpenText())
+                {
+                    string str = "";
+                    while ((str = sr.ReadLine()) != null)
+                        Console.WriteLine(str);
+
+                }
+
+
+            }
+
+
+
         }
+
     }
 }
+
+// Время запуска: 10.02.2025 8:42:40
+// Время запуска: 10.02.2025 8:43:11

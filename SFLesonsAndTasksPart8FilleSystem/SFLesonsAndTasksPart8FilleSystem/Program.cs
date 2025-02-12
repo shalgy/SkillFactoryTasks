@@ -6,6 +6,7 @@ using System.IO;
 using System.Runtime;
 using static SFLesonsAndTasksPart8FilleSystem.SFLessons82;
 using static SFLesonsAndTasksPart8FilleSystem.SFLessons83;
+using static SFLesonsAndTasksPart8FilleSystem.SFLessons84;
 
 namespace SFLesonsAndTasksPart8FilleSystem
 {
@@ -19,7 +20,11 @@ namespace SFLesonsAndTasksPart8FilleSystem
             //DesktopFolder();
             //FileWriter.TestWriter();
             //FileWriter.SelfCodeKeeper();
-            FileWriter.SelfCodeLaastRunTimeWriter();
+            //FileWriter.SelfCodeLaastRunTimeWriter2();
+            //ReadBinFromDesktop();
+            //WriteBinaryContact();
+            FileScaner.MakeDriveInfo();
+         
         }
 
         
